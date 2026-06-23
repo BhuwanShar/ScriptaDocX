@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scripta — Document Toolkit">
+    <meta name="author" content="Bhuwan Sharma">
+    <title>Scripta</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-left" id="logoBtn">
+            <div class="logo-mark">
+                                    <svg viewBox="0 0 64 64" width="28" height="28" fill="none" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="reportIconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="var(--accent)" />
+                                <stop offset="100%" stop-color="var(--accent)" />
+                            </linearGradient>
+                        </defs>
+
+                        <path
+                            d="M16 4H40L56 20V56C56 58.2 54.2 60 52 60H16C13.8 60 12 58.2 12 56V8C12 5.8 13.8 4 16 4Z"
+                            fill="var(--bg-elevated)"
+                            stroke="url(#reportIconGradient)"
+                            stroke-width="2.5"
+                        />
+
+                        <path
+                            d="M40 4V20H56"
+                            fill="none"
+                            stroke="url(#reportIconGradient)"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+                        <path
+                            d="M40 4L56 20H40Z"
+                            fill="url(#reportIconGradient)"
+                            opacity="0.12"
+                        />
+
+                        <rect
+                            x="20"
+                            y="18"
+                            width="18"
+                            height="3"
+                            rx="1.5"
+                            fill="url(#reportIconGradient)"
+                            opacity="0.85"
+                        />
+
+                        <rect
+                            x="20"
+                            y="26"
+                            width="24"
+                            height="3"
+                            rx="1.5"
+                            fill="url(#reportIconGradient)"
+                            opacity="0.65"
+                        />
+
+                        <rect
+                            x="20"
+                            y="34"
+                            width="20"
+                            height="3"
+                            rx="1.5"
+                            fill="url(#reportIconGradient)"
+                            opacity="0.50"
+                        />
+
+                        <rect
+                            x="20"
+                            y="42"
+                            width="16"
+                            height="3"
+                            rx="1.5"
+                            fill="url(#reportIconGradient)"
+                            opacity="0.35"
+                        />
+                    </svg>
+            </div>
+            <div class="logo-text-group">
+                <span class="logo-text">Scripta</span>
+                <span class="logo-version">v0.1</span>
+            </div>
+        </div>
+
+        <nav class="header-nav" id="headerNav">
+            <div class="nav-dropdown">
+                <button class="nav-trigger">PDF Tools <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+                <div class="nav-menu" id="pdfNavMenu"></div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-trigger">Image Tools <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+                <div class="nav-menu" id="imgNavMenu"></div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-trigger">Text Tools <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+                <div class="nav-menu" id="textNavMenu"></div>
+            </div>
+        </nav>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="header-right">
+            <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            
+        </div>
+    </header>
+
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <div class="mobile-nav-panel">
+            <div class="mobile-nav-section">
+                <div class="mobile-nav-label">PDF Tools</div>
+                <div id="mobileNavPdf"></div>
+            </div>
+            <div class="mobile-nav-section">
+                <div class="mobile-nav-label">Image Tools</div>
+                <div id="mobileNavImg"></div>
+            </div>
+            <div class="mobile-nav-section">
+                <div class="mobile-nav-label">Text Mining</div>
+                <div id="mobileNavText"></div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main">
+
+        <!-- HOME -->
+        <section class="view active" id="view-home">
+
+            <!-- Animated Landing -->
+            <div class="landing">
+
+                <!-- Animated background -->
+                <div class="landing-bg">
+                    <!-- Floating document cards -->
+                    <div class="float-card float-card--1">
+                        <div class="float-card__inner">
+                            <div class="float-card__line" style="width:60%"></div>
+                            <div class="float-card__line" style="width:80%"></div>
+                            <div class="float-card__line" style="width:45%"></div>
+                        </div>
+                    </div>
+                    <div class="float-card float-card--2">
+                        <div class="float-card__inner">
+                            <div class="float-card__block"></div>
+                            <div class="float-card__line" style="width:70%"></div>
+                            <div class="float-card__line" style="width:50%"></div>
+                        </div>
+                    </div>
+                    <div class="float-card float-card--3">
+                        <div class="float-card__inner">
+                            <div class="float-card__line" style="width:90%"></div>
+                            <div class="float-card__line" style="width:65%"></div>
+                            <div class="float-card__line" style="width:75%"></div>
+                            <div class="float-card__line" style="width:40%"></div>
+                        </div>
+                    </div>
+                    <div class="float-card float-card--4">
+                        <div class="float-card__inner">
+                            <div class="float-card__line" style="width:55%"></div>
+                            <div class="float-card__line" style="width:85%"></div>
+                        </div>
+                    </div>
+                    <div class="float-card float-card--5">
+                        <div class="float-card__inner">
+                            <div class="float-card__block"></div>
+                            <div class="float-card__line" style="width:60%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Connecting lines -->
+                    <svg class="connect-lines" viewBox="0 0 800 600" fill="none" preserveAspectRatio="xMidYMid slice">
+                        <path class="connect-line connect-line--1" d="M100,150 Q400,100 700,200" stroke="var(--accent)" stroke-width="1" opacity="0.08"/>
+                        <path class="connect-line connect-line--2" d="M150,400 Q400,350 650,450" stroke="var(--accent)" stroke-width="1" opacity="0.06"/>
+                        <path class="connect-line connect-line--3" d="M200,100 Q400,300 600,150" stroke="#f7436d" stroke-width="1" opacity="0.05"/>
+                    </svg>
+
+                    <!-- Glow orbs -->
+                    <div class="glow-orb glow-orb--1"></div>
+                    <div class="glow-orb glow-orb--2"></div>
+
+                    <!-- Particles -->
+                    <div class="particle particle--1"></div>
+                    <div class="particle particle--2"></div>
+                    <div class="particle particle--3"></div>
+                    <div class="particle particle--4"></div>
+                    <div class="particle particle--5"></div>
+                    <div class="particle particle--6"></div>
+                    <div class="particle particle--7"></div>
+                    <div class="particle particle--8"></div>
+                </div>
+
+                <!-- Content -->
+                <div class="landing-content">
+                    <div class="landing-badge anim-hero" data-delay="0">Free &amp; Open Source</div>
+                    <h1 class="landing-title anim-hero" data-delay="1">
+                        Every tool <br>
+                        <span class="landing-title anim-hero" data-delay="1">
+                        your document requires <br>
+                        <span class="landing-title-accent">in your browser</span>
+                    </h1>
+                    <p class="landing-subtitle anim-hero" data-delay="2">
+                        Compress, OCR, merge, split, watermark PDFs and more.<br>
+                        No servers. No server uploads. No sign-ups.
+                    </p>
+                    <div class="landing-actions anim-hero" data-delay="3">
+                        <button class="landing-cta landing-cta--filled" id="ctaExplore">
+                            <span>Explore Tools</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </button>
+                        
+                    </div>
+
+                    <div class="landing-stats anim-hero" data-delay="4">
+                        <div class="landing-stat">
+                            <span class="landing-stat__number" data-count="15">0</span>+
+                            <span class="landing-stat__label">Tools</span>
+                        </div>
+                        <div class="landing-stat__divider"></div>
+                        <div class="landing-stat">
+                            <span class="landing-stat__number" data-count="0">0</span>
+                            <span class="landing-stat__label">Server uploaded</span>
+                        </div>
+                        <div class="landing-stat__divider"></div>
+                        <div class="landing-stat">
+                            <span class="landing-stat__number" data-count="100">0</span>
+                            <span class="landing-stat__label">% Free</span>
+                        </div>
+                    </div>
+
+                    <p class="landing-credit anim-hero" data-delay="5">Developed by <strong>Bhuwan Sharma</strong></p>
+                </div>
+
+                <div class="scroll-indicator" id="scrollIndicator">
+                    <div class="scroll-mouse">
+                        <div class="scroll-wheel"></div>
+                    </div>
+                    <span>Scroll</span>
+                </div>
+            </div>
+
+            <!-- Tools Grid -->
+            <div class="tools-section" id="toolsSection">
+                <div class="tools-category">
+                    <h2 class="category-label">PDF Tools</h2>
+                    <div class="tools-grid" id="pdfToolsGrid"></div>
+                </div>
+                <div class="tools-category">
+                    <h2 class="category-label">Image Tools</h2>
+                    <div class="tools-grid" id="imgToolsGrid"></div>
+                </div>
+                <div class="tools-category">
+                    <h2 class="category-label">Text Mining Tools</h2>
+                    <div class="tools-grid" id="textToolsGrid"></div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- TOOL VIEW -->
+        <section class="view" id="view-tool">
+            <button class="back-button" id="backBtn">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <span>All tools</span>
+            </button>
+            <div class="tool-hero" id="toolHero">
+                <div class="tool-hero-icon" id="toolHeroIcon"></div>
+                <div class="tool-hero-info">
+                    <h1 id="toolHeroTitle"></h1>
+                    <p id="toolHeroDesc"></p>
+                </div>
+            </div>
+            <div class="tool-body" id="toolBody"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <div class="footer-brand">
+                                            <svg viewBox="0 0 64 64" width="28" height="28" fill="none" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="reportIconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="var(--accent)" />
+                                <stop offset="100%" stop-color="var(--accent)" />
+                            </linearGradient>
+                        </defs>
+
+                        <path
+                            d="M16 4H40L56 20V56C56 58.2 54.2 60 52 60H16C13.8 60 12 58.2 12 56V8C12 5.8 13.8 4 16 4Z"
+                            fill="var(--bg-elevated)"
+                            stroke="url(#reportIconGradient)"
+                            stroke-width="2.5"
+                        />
+
+                        <path
+                            d="M40 4V20H56"
+                            fill="none"
+                            stroke="url(#reportIconGradient)"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+                        <path
+                            d="M40 4L56 20H40Z"
+                            fill="url(#reportIconGradient)"
+                            opacity="0.12"
+                        />
+
+                        <rect
+                            x="20"
+                            y="18"
+                            width="18"
+                            height="3"
+                            rx="1.5"
+                            fill="url(#reportIconGradient)"
+                            opacity="0.85"
+                        />
+
+                        <rect
+                            x="20"
+                            y="26"
+                            width="24"
+                            height="3"
+                            rx="1.5"
+                            fill="url(#reportIconGradient)"
+                            opacity="0.65"
+                        />
+
+                        <rect
+                            x="20"
+                            y="34"
+                            width="20"
+                            height="3"
+                            rx="1.5"
+                            fill="url(#reportIconGradient)"
+                            opacity="0.50"
+                        />
+
+                        <rect
+                            x="20"
+                            y="42"
+                            width="16"
+                            height="3"
+                            rx="1.5"
+                            fill="url(#reportIconGradient)"
+                            opacity="0.35"
+                        />
+                    </svg>
+                        <span>Scripta</span>
+                    </div>
+                    <p class="footer-tagline">Scripta — Document Toolkit.<br>All processing happens in your browser.</p>
+                </div>
+                <div class="footer-right">
+                    <h4 class="footer-heading">Connect</h4>
+                    <div class="footer-socials">
+                        <a href="https://github.com/BhuwanShar" target="_blank" rel="noopener" class="footer-social-link">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/bhuwansharma2002" target="_blank" rel="noopener" class="footer-social-link">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="mailto:bhuwangautam09@gmail.com" class="footer-social-link">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="footerYear"></span> Scripta. All rights reserved.</p>
+                <p>Designed &amp; developed by <strong>Bhuwan Sharma</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/toast.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/tools/compress.js"></script>
+    <script src="js/tools/ocr.js"></script>
+    <script src="js/tools/merge.js"></script>
+    <script src="js/tools/split.js"></script>
+    <script src="js/tools/rotate.js"></script>
+    <script src="js/tools/watermark.js"></script>
+    <script src="js/tools/pagenums.js"></script>
+    <script src="js/tools/metadata.js"></script>
+    <script src="js/tools/pdftoimg.js"></script>
+    <script src="js/tools/imgtopdf.js"></script>
+    <script src="js/tools/imgcompress.js"></script>
+    <script src="js/tools/wordfreq.js"></script>
+    <script src="js/tools/sentiment.js"></script>
+    <script src="js/tools/textclean.js"></script>
+    <script src="js/tools/tfidf.js"></script>
+    <script src="js/tools/readability.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
