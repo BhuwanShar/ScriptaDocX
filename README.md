@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="assets/favicon.svg" width="64" height="64" alt="Scripta Logo">
+<img src="assets/favicon.svg" width="64" height="64" alt="ScriptaDocx Logo">
 
-# Scripta
+# ScriptaDocx
 
 **Free, open-source document and text analysis toolkit that runs entirely in your browser.**
 
@@ -14,19 +14,19 @@ No servers. No uploads. No sign-ups. Your files never leave your device.
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-[**Live Demo →**](https://bhuwanshar.github.io/Scripta/)
+[**Live Demo →**](https://bhuwanshar.github.io/ScriptaDocx/)
 &nbsp;·&nbsp;
-[Report Bug](https://github.com/BhuwanShar/Scripta/issues/new?template=bug_report.md)
+[Report Bug](https://github.com/BhuwanShar/ScriptaDocx/issues/new?template=bug_report.md)
 &nbsp;·&nbsp;
-[Request Feature](https://github.com/BhuwanShar/Scripta/issues/new?template=feature_request.md)
+[Request Feature](https://github.com/BhuwanShar/ScriptaDocx/issues/new?template=feature_request.md)
 
 </div>
 
 ---
 
-## What is Scripta?
+## What is ScriptaDocx?
 
-Scripta is a fully client-side toolkit for working with PDFs, images, and text — all inside your browser window. There is no backend server. When you upload a file, it never leaves your computer. Every tool processes data locally using modern browser APIs and WebAssembly.
+ScriptaDocx is a fully client-side toolkit for working with PDFs, images, and text — all inside your browser window. There is no backend server. When you upload a file, it never leaves your computer. Every tool processes data locally using modern browser APIs and WebAssembly.
 
 It was built as a free alternative to paid services like iLovePDF, with the added dimension of text mining and analysis tools that most document platforms do not offer.
 
@@ -413,7 +413,7 @@ No frameworks. No bundlers. No Node.js required.
 ## Project Structure
 
 ```
-Scripta/
+ScriptaDocx/
 │
 ├── index.html
 ├── assets/
