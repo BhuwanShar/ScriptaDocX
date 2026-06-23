@@ -1,5 +1,5 @@
 /* ================================================================
-   Scripta — Word Frequency Analyzer with Charts
+   ScriptaDocX — Word Frequency Analyzer with Charts
    ================================================================ */
 
 var WordFreqTool = {
