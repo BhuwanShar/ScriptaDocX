@@ -1,5 +1,5 @@
 /* ================================================================
-   Scripta — View Router
+   ScriptaDocX — View Router
    
    ================================================================ */
 
@@ -33,7 +33,7 @@ var Router = {
             toolView.classList.remove('view-enter');
             homeView.classList.add('active');
             this.currentView = 'home';
-            document.title = 'Scripta \u2014 Free Document Toolkit';
+            document.title = 'ScriptaDocX \u2014 Free Document Toolkit';
         } else {
             homeView.classList.remove('active');
             toolView.classList.remove('active');
@@ -58,7 +58,7 @@ var Router = {
         document.getElementById('toolHeroIcon').innerHTML = config.icon;
         document.getElementById('toolHeroTitle').textContent = config.name;
         document.getElementById('toolHeroDesc').textContent = config.description;
-        document.title = config.name + ' \u2014 Scripta';
+        document.title = config.name + ' \u2014 ScriptaDocX';
 
         var body = document.getElementById('toolBody');
         body.innerHTML = '';
