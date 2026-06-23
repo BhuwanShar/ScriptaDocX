@@ -1,9 +1,9 @@
 /* ================================================================
-   Scripta — Main Application
+   ScriptaDocX — Main Application
    Developed by Bhuwan Sharma
    ================================================================ */
 
-var Scripta = {
+var ScriptaDocX = {
     version: '1.0.0',
     author: 'Bhuwan Sharma',
     tools: [],
@@ -42,7 +42,7 @@ var Scripta = {
         this.initLandingAnimations();
         this.initFooterYear();
 
-        console.log('Scripta v' + this.version + ' \u2014 by ' + this.author);
+        console.log('ScriptaDocX v' + this.version + ' \u2014 by ' + this.author);
     },
 
     registerTool: function(tool) {
@@ -292,5 +292,5 @@ var Scripta = {
 };
 
 document.addEventListener('DOMContentLoaded', function() {
-    Scripta.init();
+    ScriptaDocX.init();
 });
