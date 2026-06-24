@@ -320,7 +320,7 @@ img { max-width: 100%; display: block; }
     border: none;
     cursor: pointer;
     padding: 6px;
-    margin-right: 16px; 
+    margin-left: 200px; 
 
 }
 
@@ -831,6 +831,7 @@ img { max-width: 100%; display: block; }
         width: 32px;
         height: 32px;
         flex-shrink: 0;
+        margin-right: 4px;
     }
 
     .mobile-menu-toggle {
