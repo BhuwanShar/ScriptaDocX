@@ -36,7 +36,22 @@ It was built as a free alternative to paid services like iLovePDF, with the adde
 
 ## Changelog
 
-### v0.2.0 — Text Mining Suite
+### v0.0.3 — AI Content Detector
+- Added AI Content Detector with 8 research-based statistical signals
+- Zipf's Law deviation analysis (Morini et al. 2024)
+- N-gram entropy slope measurement (Lavergne et al. 2022)
+- Moving Average Type-Token Ratio (MATTR) consistency scoring
+- Lempel-Ziv compression redundancy approximation
+- Vocabulary burstiness analysis (Altmann et al. 2009)
+- Sentence starter entropy measurement
+- AI phrase fingerprint scanner
+- Human marker density (inverted signal)
+- Full signal breakdown chart and flagged phrase highlighter
+- Mandatory disclaimer modal built into the tool — no external files
+
+## Changelog
+
+### v0.0.2 — Text Mining Suite
 - Added Word Frequency Analyzer with bar, horizontal, and pie charts
 - Added Sentiment Analysis with timeline and distribution charts
 - Added TF-IDF Analyzer with heatmap and bar chart
@@ -44,7 +59,7 @@ It was built as a free alternative to paid services like iLovePDF, with the adde
 - Added Text Cleaner with 9 configurable operations
 - All charts rendered via Canvas API — no external charting libraries
 
-### v0.1.0 — Document Toolkit
+### v0.0.1 — Document Toolkit
 - PDF Compression, OCR, Merge, Split, Rotate
 - Watermark, Page Numbers, Metadata Editor
 - PDF to Images, Images to PDF, Image Compression

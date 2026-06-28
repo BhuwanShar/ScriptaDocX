@@ -33,6 +33,7 @@ var ScriptaDocX = {
         this.registerTool(TextCleanTool);
         this.registerTool(TFIDFTool);
         this.registerTool(ReadabilityTool);
+        this.registerTool(AIDetectTool);
 
         this.renderToolCards();
         this.renderHeaderNav();
